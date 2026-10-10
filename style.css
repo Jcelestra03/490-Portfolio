@@ -22,7 +22,11 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  /* the whole page is sized in rem, so this one line makes it grow and shrink with the window */
+  font-size: clamp(0.8125rem, 1.1vw + 0.25rem, 1.625rem);
+}
 
 body {
   margin: 0;
@@ -54,10 +58,10 @@ summary:focus-visible {
 
 /* ---------- page layout ---------- */
 .layout {
-  width: min(100% - 2rem, 62rem);
+  width: min(100% - 2rem, 78rem);
   margin: 1.5rem auto 0;
   display: grid;
-  grid-template-columns: 20rem minmax(0, 1fr);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 8fr);
   grid-template-areas:
     "trainer box"
     "party   box";
@@ -70,6 +74,7 @@ summary:focus-visible {
 
 @media (max-width: 52rem) {
   .layout {
+    width: min(100% - 2rem, 40rem);
     grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
       "trainer"
@@ -222,17 +227,18 @@ h1 { margin: 0; font-size: 1.55rem; line-height: 1.1; }
 .slot.open .cursor { display: block; }
 
 /* sprites are 12x12 pixel art scaled up with hard edges */
+/* sprites fill their slot, so they scale with the box */
 .sprite {
-  width: min(3rem, 100%);
+  width: 84%;
   height: auto;
   aspect-ratio: 1;
-  image-rendering: pixelated;
   filter: drop-shadow(0 2px 0 rgba(0, 0, 0, 0.25));
 }
-.sprite.emoji { font-size: 2rem; line-height: 1; text-align: center; }
-@media (min-width: 52rem) {
-  .sprite { width: min(4.5rem, 100%); }
-  .sprite.emoji { font-size: 3rem; }
+.sprite.emoji {
+  width: auto;
+  font-size: clamp(1.4rem, 4vw, 3.5rem);
+  line-height: 1;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -412,7 +418,7 @@ h1 { margin: 0; font-size: 1.55rem; line-height: 1.1; }
 .noscript { padding: 1rem; }
 
 footer {
-  width: min(100% - 2rem, 62rem);
+  width: min(100% - 2rem, 78rem);
   margin: 2rem auto;
   color: var(--muted);
   font-size: 0.9rem;

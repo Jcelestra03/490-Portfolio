@@ -32,7 +32,7 @@ const CARDS = [
     lastUpdated: "Oct 10, 2026",
     workedWith: [],
     tags: ["HTML", "CSS", "JavaScript", "GitHub Pages"],
-    reflection: "TODO: write a few sentences on how this went and what you learned. Mention any place the AI misread you."
+    reflection: "Project took 2 sessions of 1 hour for planning and implementation using Claude LLM. At first wanted to do a Discord theme then after a meeting with a friend had inspiration for this Pokémon theme."
   },
   {
     number: 2,
@@ -229,6 +229,9 @@ const PALETTE = {
 const TYPE_COLORS = ["#a8a878", "#f08030", "#6890f0", "#78c850", "#f8d030", "#f85888", "#a040a0", "#705898"];
 const AVATAR_COLORS = ["#3f78d0", "#3b9c4c", "#d0467e", "#d04444", "#8a52b0", "#2a8c8c"];
 
+const PIXEL = 16;
+// names for each box, in order. Extra boxes (after 30 projects) fall back to "BOX 2", "BOX 3", ...
+const BOX_NAMES = ["TCSS 490"];
 const SLOTS_PER_BOX = 30;
 const COLUMNS = 6;
 
@@ -256,8 +259,9 @@ function drawSprite(name) {
     return span;
   }
   const canvas = el("canvas", "sprite");
-  canvas.width = 12;
-  canvas.height = 12;
+  // each sprite pixel is drawn 16x16 so the picture stays clean at any size
+  canvas.width = 12 * PIXEL;
+  canvas.height = 12 * PIXEL;
   canvas.setAttribute("aria-hidden", "true");
   const ctx = canvas.getContext("2d");
   rows.forEach(function (row, y) {
@@ -265,7 +269,7 @@ function drawSprite(name) {
       const color = PALETTE[row[x]];
       if (color) {
         ctx.fillStyle = color;
-        ctx.fillRect(x, y, 1, 1);
+        ctx.fillRect(x * PIXEL, y * PIXEL, PIXEL, PIXEL);
       }
     }
   });
@@ -388,7 +392,7 @@ function renderBox() {
     grid.appendChild(card ? renderSlot(card, i) : el("div", "slot-empty"));
   }
 
-  document.getElementById("box-name").textContent = "BOX " + (currentBox + 1);
+  document.getElementById("box-name").textContent = BOX_NAMES[currentBox] || "BOX " + (currentBox + 1);
   document.getElementById("prev").disabled = pages <= 1;
   document.getElementById("next").disabled = pages <= 1;
 }
