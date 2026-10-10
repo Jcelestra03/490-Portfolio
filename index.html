@@ -3,71 +3,66 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jeremiah Celestra | Build Portfolio</title>
-  <meta name="description" content="Five things Jeremiah Celestra built this quarter, one card each.">
+  <title>Jeremiah Celestra | Project Box</title>
+  <meta name="description" content="Projects Jeremiah Celestra built this quarter, stored in a PC box.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-
-    <!-- Far-left server rail -->
-    <nav class="servers" aria-label="Servers">
-      <a class="server" href="#about" aria-label="Jeremiah Celestra's portfolio" aria-current="page">JC</a>
-    </nav>
-
-    <!-- Channel list -->
-    <aside class="channels">
-      <div class="server-name">Jeremiah's Portfolio</div>
-      <nav class="channel-nav" aria-label="Channels">
-        <p class="category">Start here</p>
-        <a class="channel" href="#about"><span class="hash" aria-hidden="true">#</span>about</a>
-        <p class="category">Artifacts</p>
-        <div id="channel-list"></div>
-      </nav>
-      <div class="user-panel">
-        <div class="avatar" aria-hidden="true">JC</div>
-        <div>
-          <div class="uname">Jeremiah Celestra</div>
-          <div class="ustatus" data-progress></div>
-        </div>
-      </div>
-    </aside>
-
-    <!-- Chat area -->
-    <div class="chat">
-      <header class="chat-header">
-        <h1><span class="hash" aria-hidden="true">#</span>portfolio</h1>
-        <span class="topic">Five things I built this quarter</span>
-        <span class="header-progress" data-progress></span>
-      </header>
-
-      <main class="messages">
-        <article class="message" id="about">
-          <div class="avatar" aria-hidden="true">JC</div>
-          <div class="content">
-            <span class="author">Jeremiah Celestra</span>
-            <!-- EDIT: a few sentences about who you are and what you want to build. Keep it public-safe. -->
-            <p>
-              I'm a student learning to build with AI tools. I'm interested in making small, useful things,
-              and this page collects everything I build this quarter.
-            </p>
-            <div class="segments" id="segments" aria-hidden="true"></div>
-          </div>
-        </article>
-
-        <div id="cards"></div>
-        <noscript><p class="noscript">This page needs JavaScript on to show the artifact cards.</p></noscript>
-
-        <footer>
-          Built with an AI chat assistant. The log of what I asked for is in <a href="LOG.md">LOG.md</a>.
-        </footer>
-      </main>
-    </div>
-
+  <div class="hintbar" role="note">
+    Hover over a slot (or tap it) to check its data. Eggs are ideas. Sprites are things I built.
   </div>
+
+  <main class="layout">
+
+    <!-- Trainer card: who I am -->
+    <section class="panel trainer" id="about" aria-labelledby="name">
+      <div class="panel-head">TRAINER CARD</div>
+      <div class="panel-body">
+        <div class="id-row">
+          <div class="portrait" aria-hidden="true">JC</div>
+          <div>
+            <h1 id="name">Jeremiah Celestra</h1>
+            <p class="role">Projects class &middot; Fall 2026</p>
+          </div>
+        </div>
+        <!-- EDIT: a few sentences about who you are and what you want to build. Keep it public-safe. -->
+        <p class="about">
+          I'm learning to build with AI tools. I'm interested in making small, useful things,
+          and this page collects everything I build this quarter.
+        </p>
+        <div class="segments" id="segments" aria-hidden="true"></div>
+        <p class="progress-text" data-progress></p>
+      </div>
+    </section>
+
+    <!-- The PC box: one slot per project -->
+    <section class="box-frame" aria-label="Project box">
+      <div class="box-head">
+        <button class="arrow" id="prev" type="button" aria-label="Previous box">&#9664;</button>
+        <h2 id="box-name">BOX 1</h2>
+        <button class="arrow" id="next" type="button" aria-label="Next box">&#9654;</button>
+      </div>
+      <div class="wallpaper">
+        <div class="box-grid" id="box-grid"></div>
+      </div>
+      <noscript><p class="noscript">This page needs JavaScript on to show the project box.</p></noscript>
+    </section>
+
+    <!-- Party: people I've worked with -->
+    <section class="panel party" id="party" aria-labelledby="party-heading">
+      <div class="panel-head" id="party-heading" data-party-heading>PARTY</div>
+      <div class="panel-body" id="party-list"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    Built with an AI chat assistant. The log of what I asked for is in <a href="LOG.md">LOG.md</a>.
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
