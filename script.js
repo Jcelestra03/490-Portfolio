@@ -15,6 +15,7 @@
     lastUpdated  any text, e.g. "Oct 18, 2026"
     workedWith   a list of names, e.g. ["Sam", "Priya"]. Leave [] for solo work.
     tags         short words that describe the project. They show up as its "moves".
+    summary, idea, reflection   can include links written like [words](https://example.com)
 
   Adding more projects later: add another card to the end of the list. The box holds
   30 slots, and the arrows at the top of the box flip to the next box after that.
@@ -39,7 +40,7 @@ const CARDS = [
     kind: "Something You Will Use",
     status: "idea",
     title: "TODO: your idea",
-    idea: "TODO: something you might build, a problem you'd like to solve, or a tool you wish existed.",
+    idea: "Build something for yourself: a thing that runs, does one real thing, and that you will actually use after this week. This is your first build with Claude Code, so it should be small. Since you are the only user, you are free to decide for yourself what counts as \"working\".",
     link: "",
     lastUpdated: "",
     workedWith: [],
@@ -51,7 +52,7 @@ const CARDS = [
     kind: "AI Inside It",
     status: "idea",
     title: "TODO: your idea",
-    idea: "TODO: another idea. You won't be held to it.",
+    idea: "Something where a model does some of the work every time it runs (it reads, decides, writes, or calls tools). This week's lecture and reading ([Tools on Top of LLMs](https://cfb3.github.io/TCSS490-26-AUTUMN/readings/tools-on-top-of-llms/)) explain the loop you are building on.",
     link: "",
     lastUpdated: "",
     workedWith: [],
@@ -63,7 +64,7 @@ const CARDS = [
     kind: "For Someone Else",
     status: "idea",
     title: "TODO: your idea",
-    idea: "TODO: another idea. You won't be held to it.",
+    idea: "Build something with one or two other people, for someone who is not on your team. Unlike the earlier artifacts, this one adds teammates who touch the same code and a person whose needs you will have to find out by asking. It is also a small rehearsal for Artifact 5, the moonshot, which may have real users.",
     link: "",
     lastUpdated: "",
     workedWith: [],
@@ -75,7 +76,7 @@ const CARDS = [
     kind: "The Moonshot",
     status: "idea",
     title: "TODO: your idea",
-    idea: "TODO: another idea. You won't be held to it.",
+    idea: "Build something larger than anything you have built before, using the five weeks and the tools you now have. It should be big, and if it is the kind of thing people can use, it should be deployed where real users can reach it. You have five weeks, the tools you have spent a month learning, and a team if you want one. The Week 5 lecture on scaffolding a larger project is aimed at this artifact.",
     link: "",
     lastUpdated: "",
     workedWith: [],
@@ -290,6 +291,25 @@ function workedWithText(card) {
   return card.status === "done" ? "Solo" : "\u2014";
 }
 
+// text can contain links written like [words](https://example.com)
+function richParagraph(text, className) {
+  const p = el("p", className || "");
+  const pattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+  let last = 0;
+  let m;
+  while ((m = pattern.exec(text)) !== null) {
+    if (m.index > last) p.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const a = el("a", "", m[1]);
+    a.href = m[2];
+    a.target = "_blank";
+    a.rel = "noopener";
+    p.appendChild(a);
+    last = pattern.lastIndex;
+  }
+  if (last < text.length) p.appendChild(document.createTextNode(text.slice(last)));
+  return p;
+}
+
 function addRow(list, label, value) {
   list.appendChild(el("dt", "", label));
   list.appendChild(el("dd", "", value));
@@ -317,7 +337,7 @@ function renderTab(card) {
   }
 
   const body = done ? card.summary : card.idea;
-  if (body) tab.appendChild(el("p", "", body));
+  if (body) tab.appendChild(richParagraph(body));
 
   const info = el("dl", "info");
   addRow(info, "Last updated", card.lastUpdated || "\u2014");
@@ -345,7 +365,7 @@ function renderTab(card) {
 
   if (done && card.reflection) {
     tab.appendChild(el("h4", "", "NOTES"));
-    tab.appendChild(el("p", "reflection", card.reflection));
+    tab.appendChild(richParagraph(card.reflection, "reflection"));
   }
 
   return tab;
