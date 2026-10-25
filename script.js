@@ -50,14 +50,16 @@ const CARDS = [
   {
     number: 3,
     kind: "AI Inside It",
-    status: "idea",
-    title: "TODO: your idea",
-    idea: "Something where a model does some of the work every time it runs (it reads, decides, writes, or calls tools). This week's lecture and reading ([Tools on Top of LLMs](https://cfb3.github.io/TCSS490-26-AUTUMN/readings/tools-on-top-of-llms/)) explain the loop you are building on.",
-    link: "",
-    lastUpdated: "",
+    status: "done",
+    icon: "chart",
+    title: "Quant Scout",
+    summary: "A stock screener where plain Python computes risk and return stats (Sharpe, drawdown, VaR, beta, momentum) and Claude, run headless with claude -p, ranks the stocks for a risk level and explains each pick. The code rejects any answer whose cited numbers don't match the data. [Project page](https://jcelestra03.github.io/quant-scout/)",
+    link: "https://github.com/Jcelestra03/quant-scout",
+    linkText: "View repo",
+    lastUpdated: "Oct 25, 2026",
     workedWith: [],
-    tags: [],
-    reflection: ""
+    tags: ["Python", "Claude Code", "claude -p", "pandas", "Quant stats"],
+    reflection: "The most useful design decision was keeping the arithmetic and hard risk limits in code and giving the model only the judgment and explanation, so when something goes wrong I can tell whether it was the model or my code. On the first run Claude rejected XOM despite its top Sharpe because of its drawdown and volatility, a trade-off the plain-code ranking missed. I also learned the validator checks Claude's numbers but not claims like \"highest\", and that backtests with an LLM can be flattered by what it remembers from training."
   },
   {
     number: 4,
