@@ -11,7 +11,7 @@
 
   Fields:
     kind         the assignment name (leave as is)
-    icon         egg, site, phone, bot, bolt, star, book, chart, or a single emoji like "🎮"
+    icon         egg, site, phone, bot, bolt, star, book, chart, gift, or a single emoji like "🎮"
     lastUpdated  any text, e.g. "Oct 18, 2026"
     workedWith   a list of names, e.g. ["Sam", "Priya"]. Leave [] for solo work.
     tags         short words that describe the project. They show up as its "moves".
@@ -38,13 +38,15 @@ const CARDS = [
   {
     number: 2,
     kind: "Something You Will Use",
-    status: "idea",
-    title: "TODO: your idea",
-    idea: "Build something for yourself: a thing that runs, does one real thing, and that you will actually use after this week. This is your first build with Claude Code, so it should be small. Since you are the only user, you are free to decide for yourself what counts as \"working\".",
-    link: "",
-    lastUpdated: "",
+    status: "done",
+    icon: "gift",
+    title: "Secret Santa setup",
+    summary: "A one-file Secret Santa website anyone can run for free: private login codes, wishlists from a quick questionnaire, Pokémon code names, anonymous questions, and a gift-day reveal, backed by Firebase with no server of my own. The project page walks through setup in 8 steps and has a [live demo](https://jcelestra03.github.io/Secret-Sants-Public-use-setup/demo/). [Code on GitHub](https://github.com/jcelestra03/Secret-Sants-Public-use-setup)",
+    link: "https://jcelestra03.github.io/Secret-Sants-Public-use-setup/",
+    linkText: "View site",
+    lastUpdated: "Oct 30, 2026",
     workedWith: [],
-    tags: [],
+    tags: ["HTML", "JavaScript", "Firebase", "Firestore", "GitHub Pages"],
     reflection: ""
   },
   {
@@ -218,6 +220,20 @@ const SPRITES = {
     "k.yy.bb.rr..",
     "kkkkkkkkkkkk",
     "............"
+  ],
+  gift: [
+    "...kk..kk...",
+    "..kyykkyyk..",
+    "...kkyykk...",
+    "kkkkkyykkkkk",
+    "krrrryyrrrrk",
+    "kkkkkyykkkkk",
+    ".krrryyrrrk.",
+    ".krrryyrrrk.",
+    ".kRRRyyRRRk.",
+    ".krrryyrrrk.",
+    ".kRRRyyRRRk.",
+    ".kkkkkkkkkk."
   ]
 };
 /* SPRITES-END */
