@@ -3,6 +3,9 @@
 
   Each card is one slot in the PC box. Eggs are ideas, sprites are built projects.
 
+  While an artifact is being built, set status to "hatching": the egg cracks open and
+  shows a peek of what's inside, and the tab links to the work so far.
+
   When you finish an artifact:
     1. Change status from "idea" to "done"
     2. Fill in title, summary, link, lastUpdated, workedWith, tags, and reflection
@@ -66,7 +69,7 @@ const CARDS = [
   {
     number: 4,
     kind: "For Someone Else",
-    status: "idea",
+    status: "hatching",
     icon: "✦",
     title: "Desktop Sigil",
     idea: "In progress. A Windows desktop overlay inspired by the anime Witch Hat Atelier: draw a sigil with your mouse and it casts, opening a game, app, or website. We're building it as a surprise for a friend who loves games, drawing art, and the anime. Where it stands: a working mock build with a Sigil Book window to assign sigils to an .exe or website, a floating cast button, and a $P shape recognizer. Next we're redesigning the window's look and theme. [Code on GitHub](https://github.com/Jcelestra03/Desktop-Sigil-idea)",
@@ -131,6 +134,21 @@ const SPRITES = {
     "..kggwwwggk.",
     "...kkgggkk..",
     "....kkkk...."
+  ],
+  // cracked egg with the sigil peeking out, for status "hatching"
+  hatching: [
+    "..c......c..",
+    ".....yy.....",
+    "....yooy....",
+    "...yoYYoy...",
+    "..k.yooy.k..",
+    ".kwk.yy.kwk.",
+    ".kwwkGGkwbk.",
+    ".kwbbwwwwwk.",
+    ".kwwbwGwwwk.",
+    ".kgwwwwGwgk.",
+    "..kggwwggk..",
+    "...kkkkkk..."
   ],
   site: [
     "kkkkkkkkkkkk",
@@ -305,6 +323,7 @@ function drawSprite(name) {
 }
 
 function spriteFor(card) {
+  if (card.status === "hatching") return "hatching";
   if (card.status !== "done") return "egg";
   return card.icon || "site";
 }
@@ -355,12 +374,15 @@ function renderTab(card) {
 
   tab.appendChild(el("h3", "tab-title", card.title));
 
-  if (done && card.link) {
+  const hatching = card.status === "hatching";
+  if ((done || hatching) && card.link) {
+    if (hatching) tab.appendChild(el("p", "nolink", "Hatching! Still being built."));
     const a = el("a", "open-link", (card.linkText || "Open project") + " \u25B6");
     a.href = card.link;
     tab.appendChild(a);
   } else {
-    tab.appendChild(el("p", "nolink", done ? "No link yet" : "Not built yet. This is still an egg."));
+    tab.appendChild(el("p", "nolink", done ? "No link yet" :
+      hatching ? "Hatching! Still being built." : "Not built yet. This is still an egg."));
   }
 
   const body = done ? card.summary : card.idea;

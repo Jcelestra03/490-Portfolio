@@ -42,3 +42,6 @@ Notes on what I asked the AI for and what changed. Newest entries at the bottom.
   surprise for a friend. Links to the [Desktop-Sigil-idea repo](https://github.com/Jcelestra03/Desktop-Sigil-idea).
 - **Changed / notes:** Left the friend's name off this public page so the surprise isn't
   spoiled. Switch the card to `"done"` and add a reflection after the handover.
+- **Later:** Added Tiffany to the Party panel. Added a `"hatching"` status: card 4's egg
+  is now cracked open with the gold sigil ✦ peeking out, and its tab says "Hatching!
+  Still being built." with a link to the repo.
