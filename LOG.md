@@ -31,3 +31,14 @@ Notes on what I asked the AI for and what changed. Newest entries at the bottom.
 - **Asked for:** A project where a model does real work every run. I wanted a stock-trading helper based on quant statistics; it became a screener where Python computes the stats and Claude ranks the stocks and explains its picks, with code fact-checking every number.
 - **Got:** The [quant-scout repo](https://github.com/Jcelestra03/quant-scout) (its own LOG.md has the full build history), a Roblox-style [project page](https://jcelestra03.github.io/quant-scout/), and card 3 filled in here.
 - **Changed / notes:** Getting the Claude CLI logged in on Windows took a few tries (PowerShell vs Bash commands, and the app's files live in a hidden packaged-app folder).
+
+## Artifact 4: Desktop Sigil (in progress)
+
+**AI used:** Claude Code (desktop app)
+
+- **Asked for:** Card 4 updated with our Artifact 4 idea for the Week 4 check-in.
+- **Got:** Card 4 filled in as an in-progress egg: Desktop Sigil, a Witch Hat Atelier-style
+  overlay where drawing a sigil opens a game, app, or website, built with Tiffany as a
+  surprise for a friend. Links to the [Desktop-Sigil-idea repo](https://github.com/Jcelestra03/Desktop-Sigil-idea).
+- **Changed / notes:** Left the friend's name off this public page so the surprise isn't
+  spoiled. Switch the card to `"done"` and add a reflection after the handover.
