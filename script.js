@@ -105,6 +105,13 @@ const CARDS = [
   Only list someone if they're OK with their name being on a public page.
 */
 const COLLABORATORS = [
+  {
+    name: "Tiffany",
+    project: "Artifact 4: Desktop Sigil",
+    description: "We're building a Witch Hat Atelier-style desktop overlay where drawing a sigil opens a game, app, or website. Tiffany owns the shape recognizer and sigil storage; I own the overlay, hotkey, and Sigil Book window.",
+    link: "https://github.com/Jcelestra03/Desktop-Sigil-idea",
+    linkText: "View repo"
+  }
 ];
 
 /* ---------- pixel sprites: 12x12 grids, one letter per pixel ---------- */
