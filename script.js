@@ -72,12 +72,12 @@ const CARDS = [
     status: "hatching",
     icon: "✦",
     title: "Desktop Sigil",
-    idea: "In progress. A Windows desktop overlay inspired by the anime Witch Hat Atelier: draw a sigil with your mouse and it casts, opening a game, app, or website. We're building it as a surprise for a friend who loves games, drawing art, and the anime. Where it stands: a working mock build with a Sigil Book window to assign sigils to an .exe or website, a floating cast button, and a $P shape recognizer. Next we're redesigning the window's look and theme. [Code on GitHub](https://github.com/Jcelestra03/Desktop-Sigil-idea)",
+    idea: "Almost done. A Windows desktop app inspired by the anime Witch Hat Atelier: click the floating ✦ button or press Ctrl+Alt+S, draw a sigil with your mouse, and it casts, opening a game, app, folder, or website. We built it as a surprise for a friend who loves games, drawing, and the anime. Your sigils live in the Sigil Book, a grimoire window with four looks (painted Candlelight and Midnight, plus Parchment and Obsidian), where you draw each sigil three times with Paint-style pens so the $P recognizer learns your shape. A first-time tour with a practice cast and a \"?\" next to every button explain how it works. Tiffany added sigil sharing (a .sigil file or a short code that fits in one Discord message, checked for safety before anything runs) and made the page text stay even at any window size. It also comes as a Desktop Sigil.exe, so it runs without installing Python. [Code and user guide on GitHub](https://github.com/Jcelestra03/Desktop-Sigil-idea)",
     link: "https://github.com/Jcelestra03/Desktop-Sigil-idea",
     linkText: "View repo",
-    lastUpdated: "Nov 1, 2026",
+    lastUpdated: "Nov 8, 2026",
     workedWith: ["Tiffany"],
-    tags: ["Python", "tkinter", "$P recognizer", "Windows", "Claude Code"],
+    tags: ["Python", "tkinter", "$P recognizer", "Windows", "PyInstaller", "Claude Code"],
     reflection: ""
   },
   {
@@ -111,7 +111,7 @@ const COLLABORATORS = [
   {
     name: "Tiffany",
     project: "Artifact 4: Desktop Sigil",
-    description: "We're building a Witch Hat Atelier-style desktop overlay where drawing a sigil opens a game, app, or website. Tiffany owns the shape recognizer and sigil storage; I own the overlay, hotkey, and Sigil Book window.",
+    description: "We built a Witch Hat Atelier-style desktop app where drawing a sigil opens a game, app, or website. Tiffany made sigil sharing between friends (.sigil files and copy-paste codes with safety checks) and the even text layout that keeps the Sigil Book readable at any window size, and she owns the recognizer and storage code. I built the overlay, hotkey, Sigil Book grimoire and its painted looks, the sigil editor, the tutorial and help, and the .exe.",
     link: "https://github.com/Jcelestra03/Desktop-Sigil-idea",
     linkText: "View repo"
   }

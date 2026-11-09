@@ -45,3 +45,8 @@ Notes on what I asked the AI for and what changed. Newest entries at the bottom.
 - **Later:** Added Tiffany to the Party panel. Added a `"hatching"` status: card 4's egg
   is now cracked open with the gold sigil ✦ peeking out, and its tab says "Hatching!
   Still being built." with a link to the repo.
+- **Nov 8 update:** Card 4 now describes where Desktop Sigil stands: the Sigil Book grimoire
+  with four looks (painted Candlelight and Midnight, Parchment, Obsidian), Paint-style pens,
+  the tour with a practice cast and "?" help, Tiffany's sigil sharing and even text layout,
+  and the Desktop Sigil.exe. Tiffany's Party entry now says what each of us built. Still
+  `"hatching"`: switch to `"done"`, link the release, and add a reflection after the handover.
