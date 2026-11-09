@@ -54,3 +54,5 @@ Notes on what I asked the AI for and what changed. Newest entries at the bottom.
   ([release](https://github.com/Jcelestra03/Desktop-Sigil-idea/releases/tag/v1.0)). Card 4 is
   now `"done"`: its button downloads the release, and the summary links both the release and
   the repo. Reflection still to write after the handover.
+- **Nov 8, sprite:** Card 4's ✦ became a pixel sigil sprite (`sigil` in `SPRITES`): a red
+  triangle sigil inside a gold rune circle, in the same 12×12 style as the other cards.

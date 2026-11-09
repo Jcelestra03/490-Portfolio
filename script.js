@@ -14,7 +14,7 @@
 
   Fields:
     kind         the assignment name (leave as is)
-    icon         egg, site, phone, bot, bolt, star, book, chart, gift, or a single emoji like "🎮"
+    icon         egg, site, phone, bot, bolt, star, book, chart, gift, sigil, or a single emoji like "🎮"
     lastUpdated  any text, e.g. "Oct 18, 2026"
     workedWith   a list of names, e.g. ["Sam", "Priya"]. Leave [] for solo work.
     tags         short words that describe the project. They show up as its "moves".
@@ -70,7 +70,7 @@ const CARDS = [
     number: 4,
     kind: "For Someone Else",
     status: "done",
-    icon: "✦",
+    icon: "sigil",
     title: "Desktop Sigil",
     summary: "A Windows desktop app inspired by the anime Witch Hat Atelier: click the floating ✦ button or press Ctrl+Alt+S, draw a sigil with your mouse, and it casts, opening a game, app, folder, or website. We built it as a surprise for a friend who loves games, drawing, and the anime. Your sigils live in the Sigil Book, a grimoire window with four looks (painted Candlelight and Midnight, plus Parchment and Obsidian), where you draw each sigil three times with Paint-style pens so the $P recognizer learns your shape. A first-time tour with a practice cast and a \"?\" next to every button explain how it works. Tiffany added sigil sharing (a .sigil file or a short code that fits in one Discord message, checked for safety before anything runs) and made the page text stay even at any window size. It also comes as a Desktop Sigil.exe, so it runs without installing Python. [Download v1.0](https://github.com/Jcelestra03/Desktop-Sigil-idea/releases/tag/v1.0) · [Code and user guide on GitHub](https://github.com/Jcelestra03/Desktop-Sigil-idea)",
     link: "https://github.com/Jcelestra03/Desktop-Sigil-idea/releases/tag/v1.0",
@@ -148,6 +148,21 @@ const SPRITES = {
     ".kwwbwGwwwk.",
     ".kgwwwwGwgk.",
     "..kggwwggk..",
+    "...kkkkkk..."
+  ],
+  // a sigil: red triangle sigil inside a gold rune circle (Desktop Sigil)
+  sigil: [
+    "...kkkkkk...",
+    ".kkykyykykk.",
+    ".kywwrrwwyk.",
+    "kywwrwwrwwyk",
+    "kkwwrwwrwwkk",
+    "kywrwyywrwyk",
+    "kywrwyywrwyk",
+    "kkrwwwwwwrkk",
+    "kyrrrrrrrryk",
+    ".kywwwwwwyk.",
+    ".kkykyykykk.",
     "...kkkkkk..."
   ],
   site: [
