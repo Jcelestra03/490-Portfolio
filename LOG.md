@@ -50,3 +50,7 @@ Notes on what I asked the AI for and what changed. Newest entries at the bottom.
   the tour with a practice cast and "?" help, Tiffany's sigil sharing and even text layout,
   and the Desktop Sigil.exe. Tiffany's Party entry now says what each of us built. Still
   `"hatching"`: switch to `"done"`, link the release, and add a reflection after the handover.
+- **Nov 8, release:** Desktop Sigil v1.0 is out
+  ([release](https://github.com/Jcelestra03/Desktop-Sigil-idea/releases/tag/v1.0)). Card 4 is
+  now `"done"`: its button downloads the release, and the summary links both the release and
+  the repo. Reflection still to write after the handover.
